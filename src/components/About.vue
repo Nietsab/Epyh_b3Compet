@@ -1,7 +1,7 @@
 <template>
   <div class="about">
     <span class="intro">Introduction</span>
-    <span class="content">Les actualités quotidiennes de <strong style="color: #ffffff">MY HYPE</strong> sont devenues un point de rencontre important pour ceux qui s'intéressent à <strong style="color: #ffffff">l'évolution de la mode</strong>
+    <span class="content">Les actualités quotidiennes de <strong style="color: #ffffff">EPYH</strong> sont devenues un point de rencontre important pour ceux qui s'intéressent à <strong style="color: #ffffff">l'évolution de la mode</strong>
     ainsi que d'autres domaines en lien comme l'art, la musique, le design et l'art de vivre.</span>
   </div>
 </template>

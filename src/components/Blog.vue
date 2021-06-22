@@ -7,7 +7,7 @@
 
     <div class="columns">
       <div class="column">
-        <img src="../assets/Lidl.png" class="is-128x128">
+        <img alt="Lidl" src="../assets/Lidl.png" class="is-128x128">
       </div>
       <div class="column">
         <div class="title" style="display: flex">
@@ -22,11 +22,11 @@
 
     <div class="columns">
       <div class="column">
-        <img src="../assets/Roland-Garros.png" class="is-128x128">
+        <img alt="Roland Garros" src="../assets/Roland-Garros.png" class="is-128x128">
       </div>
       <div class="column">
         <div class="title" style="display: flex">
-          <span class="pop" >Mode</span>
+          <span class="pop">Mode</span>
         </div>
         <p style="text-align: justify; font-family: Kanit; font-weight: 700; font-size: 30px; color: #ffffff; width: 80%; line-height: 50px">
           Voici la panoplie parfaite pour passer une journée à Roland-Garros
@@ -102,5 +102,13 @@ export default {
 
   .title .logo {
     height: 13%;
+  }
+
+  @media only screen 
+  and (min-device-width: 300px) 
+  and (max-device-width: 812px) { 
+  .blog .text-blog{
+    font-size: 4rem;
+  } 
   }
 </style>

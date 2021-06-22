@@ -8,9 +8,23 @@ const routes = [
         path: '/',
         name: 'home',
         components: {
-            default: () => import(/* webpackChunkName : "home" */ '../views/Home.vue'),
+            default: () => import('../views/Home.vue'),
         }
-    }, 
+    },
+    {
+        path: '/mentionLegales',
+        name: 'mentionlegales',
+        components: {
+            default: () => import('../views/Mention.vue'),
+        }
+    },
+    {
+        path: '/player',
+        name: 'player',
+        components: {
+            default: () => import('../views/Player.vue'),
+        }
+    },
 ]
 
 const router = new VueRouter({
