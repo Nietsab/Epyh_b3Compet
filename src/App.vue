@@ -14,6 +14,16 @@
 
 export default {
   name: 'App',
+  metaInfo: {
+      title: 'Epyh',
+      meta: [
+        { name: 'description', content: 'Epyh vous propose d\'avoir votre propre personal shopper afin de devenir le meilleur des Hypebeasts, Vous allez également pouvoir suivre toute l\'actualité de l\'univers Hypebeast'},
+        { name: 'author', content: 'Bastien GUILLAUME'},
+        { name: 'copyright', content: 'Copyright (c) Epyh 2021-2021'},
+        { name: 'robots', content: 'index,noodp,follow'},
+        { name: 'viewport', content: 'width=device-width,initial-scale=1'}
+      ]
+  },
   components: {
     // Header,
     // About,

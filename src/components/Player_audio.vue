@@ -359,7 +359,7 @@ button.play.playing i {
   width: 110px;
   border-radius: 50%;
   transition: all 1s ease;
-  background-image: url('../assets/logo.png');
+  background-image: url('../assets/img/logo.png');
   background-size: cover;
   background-position: center;
   display: flex;

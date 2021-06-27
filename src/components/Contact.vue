@@ -1,11 +1,11 @@
 <template>
   <div class="contact">
     <video class="video_moodboard" controls>
-      <source src="../assets/Moodboard.mp4" type="video/mp4"> 
+      <source src="../assets/video/Moodboard.mp4" type="video/mp4">
     </video>
     <!-- <youtube video-id="wZPdCzaTvi4" width="60%"/> -->
     <br><br>
-    <img alt="Logo Epyh" src="../assets/logo.png" class="contact-image">
+    <img alt="Logo Epyh" src="../assets/img/logo.png" class="contact-image">
     <iframe title="newsletter" width="540" height="540" src="https://2f9c1cb5.sibforms.com/serve/MUIEAN7edpFlF1A4md4gbt6_jpuHVtxlpSthoFVVklPRrBBfqOOojiIDc0n4K8bi1KCXRomjIT3doXrIpyqGh6_O7TYYSkKghJ5obRZ4a-f-8h2X9E3qiYnuGIl3oMrjFrMUFHqnIrkuWENI485ds4nZL6YORmGaC1ouqRaoquaKZc95qerhUxeP70Em_hdD1x0-SaRCIKgxAESC" frameborder="0" scrolling="auto" allowfullscreen style="display: block;margin-left: auto;margin-right: auto;max-width: 100%;"></iframe>  
     <!-- <img src="../assets/podcast.png" class="modal-player" alt="Logo Podcast"> -->
 

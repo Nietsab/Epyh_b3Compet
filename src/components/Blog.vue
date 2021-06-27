@@ -7,7 +7,7 @@
 
     <div class="columns">
       <div class="column">
-        <img alt="Lidl" src="../assets/Lidl.png" class="is-128x128">
+        <img alt="Lidl" src="../assets/img/Lidl.png" class="is-128x128">
       </div>
       <div class="column">
         <div class="title" style="display: flex">
@@ -22,7 +22,7 @@
 
     <div class="columns">
       <div class="column">
-        <img alt="Roland Garros" src="../assets/Roland-Garros.png" class="is-128x128">
+        <img alt="Roland Garros" src="../assets/img/Roland-Garros.png" class="is-128x128">
       </div>
       <div class="column">
         <div class="title" style="display: flex">

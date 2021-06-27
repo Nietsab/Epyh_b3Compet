@@ -7,13 +7,13 @@
 
     <div class="columns">
       <div class="column">
-        <img alt="Defile" src="../assets/Mec.png" class="is-128x128">
+        <img alt="Defile" src="../assets/img/Mec.png" class="is-128x128">
       </div>
       <div class="column" style="margin-left: 5rem">
         <div class="title" style="display: flex">
           <hr>
           <span class="mode" >La mode
-            <img alt="Epyh" src="../assets/logo.png" class="image is-32x32">
+            <img alt="Epyh" src="../assets/img/logo.png" class="image is-32x32">
           </span>
         </div>
         <p style="text-align: justify; font-family: Kanit; font-weight: 400; font-size: 18px; color: #ffffff; width: 80%;">
@@ -30,7 +30,7 @@
           <hr>
           <span class="mode">
             La pop culture
-            <img alt="Epyh" src="../assets/logo.png" class="image is-32x32">
+            <img alt="Epyh" src="../assets/img/logo.png" class="image is-32x32">
           </span>
         </div>
         <p style="text-align: justify; font-family: Kanit; font-weight: 400; font-size: 18px; color: #ffffff; width: 80%;">
@@ -40,20 +40,20 @@
         </p>
       </div>
       <div class="column" style="margin-left: 5rem">
-        <img alt="Maryline Monroe" src="../assets/Marylin.png" class="is-128x128">
+        <img alt="Maryline Monroe" src="../assets/img/Marylin.png" class="is-128x128">
       </div>
     </div>
 
     <div class="columns">
       <div class="column" >
-        <img alt="Iphone" src="../assets/Apple.png" class="is-128x128">
+        <img alt="Iphone" src="../assets/img/Apple.png" class="is-128x128">
       </div>
       <div class="column">
         <div class="title" style="display: flex;">
           <hr>
           <span class="mode">
             La pop culture
-            <img alt="Logo Epyh" src="../assets/logo.png" class="image is-32x32">
+            <img alt="Logo Epyh" src="../assets/img/logo.png" class="image is-32x32">
           </span>
         </div>
         <p style="text-align: justify; font-family: Kanit; font-weight: 400; font-size: 18px; color: #ffffff; width: 80%;">
