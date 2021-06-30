@@ -12,7 +12,7 @@
                 </b-img>
               </slide>
               <slide class="p-2">
-                <b-img src="https://i.ibb.co/3sF6T4r/Lidl.png" img-alt="Image" img-top
+                <b-img class="img-border" src="https://i.ibb.co/3sF6T4r/Lidl.png" img-alt="Image" img-top
                      tag="article">
                 </b-img>
               </slide>
