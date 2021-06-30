@@ -17,7 +17,7 @@
         </div>
 
         <nav class="header-navigation">
-          <a href="" class="">Personnal Shopper</a>
+          <a href="" class="nav-element">Personnal Shopper</a>
           <a href="" class="">Actus</a>
           <a href="" class="">Podcast</a>
           <a href="" class="">Interview</a>
@@ -106,7 +106,11 @@ body {
 
 
 a {
-  color: inherit;
+  color: inherit ;
+}
+
+.nav-element :hover{
+  color: red;
 }
 
 .responsive-wrapper {
@@ -189,6 +193,11 @@ a {
   display: none;
   font-size: 1.125rem;
   color: #ffffff;
+  text-decoration: none;
+}
+
+.header-navigation a :hover{
+  color: red;
 }
 
 .header-navigation button {

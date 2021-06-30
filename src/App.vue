@@ -7,6 +7,10 @@
 <script>
 // import Header from './components/Layout/Header.vue'
 // import Footer from './components/Layout/Footer.vue'
+import Vue from 'vue';
+import VueCarousel from 'vue-carousel';
+
+Vue.use(VueCarousel);
 
 export default {
   name: 'App',
@@ -41,6 +45,7 @@ export default {
 }
 
 body {
+  background-image: url("assets/img/fond_body.png");
   margin: 0;
 }
 </style>

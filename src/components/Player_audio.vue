@@ -42,7 +42,7 @@ const tracks = [
     title: 'Hypetime #1',
     artist: 'EPYH',
     src: '',
-    cover: '../assets/logo.png'
+    cover: ''
   },
   {
     id: '2',
@@ -52,149 +52,150 @@ const tracks = [
     cover: 'https://lh3.google.com/u/0/d/16zCkZ2eUvGomLb8R3MVAuuHZ2CAmPyhq=w1920-h953-iv1'
   },
 ];
-const player = document.querySelector('.player');
-const audio = player.querySelector('.player__audio');
-const audioSource = audio.querySelector('source');
-const songPanel = player.querySelector('.song-panel');
-const songTitle = player.querySelector('.song-info__title');
-const songArtist = player.querySelector('.song-info__artist');
-const backButton = player.querySelector('.backward');
-const playButton = player.querySelector('.play');
-const forwardButton = player.querySelector('.forward');
-const spinner = player.querySelector('.spinner');
-const spinnerDisc = player.querySelector('.spinner__disc');
-const progress = player.querySelector('.progress');
-const progressBar = player.querySelector('.progress__filled');
 
-let playing = false;
-let trackSwitch = false;
+    const player = document.querySelector('.player');
+    const audio = player.querySelector('.player__audio');
+    const audioSource = audio.querySelector('source');
+    const songPanel = player.querySelector('.song-panel');
+    const songTitle = player.querySelector('.song-info__title');
+    const songArtist = player.querySelector('.song-info__artist');
+    const backButton = player.querySelector('.backward');
+    const playButton = player.querySelector('.play');
+    const forwardButton = player.querySelector('.forward');
+    const spinner = player.querySelector('.spinner');
+    const spinnerDisc = player.querySelector('.spinner__disc');
+    const progress = player.querySelector('.progress');
+    const progressBar = player.querySelector('.progress__filled');
 
-const togglePlay = () => {
-  // Play / pause the audio
-  const method = audio.paused ? 'play' : 'pause';
-  playing = audio.paused ? true : false;
-  audio[method]();
-};
+    let playing = false;
+    let trackSwitch = false;
 
-const toggleSongPanel = () => {
+    const togglePlay = () => {
+      // Play / pause the audio
+      const method = audio.paused ? 'play' : 'pause';
+      playing = audio.paused ? true : false;
+      audio[method]();
+    };
 
-  if (!trackSwitch) {
-    // Scale the disc
-    spinnerDisc.classList.toggle('scale');
+    const toggleSongPanel = () => {
 
-    // Show / hide song panel
-    songPanel.classList.toggle('playing');
+      if (!trackSwitch) {
+        // Scale the disc
+        spinnerDisc.classList.toggle('scale');
 
-    // Change button icon
-    playButton.classList.toggle('playing');
-  }
-};
+        // Show / hide song panel
+        songPanel.classList.toggle('playing');
 
-const startSpin = () => {
-  // Start spinning the disc
-  spinner.classList.add('spin');
-};
+        // Change button icon
+        playButton.classList.toggle('playing');
+      }
+    };
 
-const stopSpin = () => {
-  // Stop spinning the disc
-  const spin = document.querySelector('.spin');
-  spin.addEventListener("animationiteration", () => {
-    if (!playing) {
-      spin.style.animation = 'none';
-      spinner.classList.remove('spin');
-      spin.style.animation = '';
+    const startSpin = () => {
+      // Start spinning the disc
+      spinner.classList.add('spin');
+    };
+
+    const stopSpin = () => {
+      // Stop spinning the disc
+      const spin = document.querySelector('.spin');
+      spin.addEventListener("animationiteration", () => {
+        if (!playing) {
+          spin.style.animation = 'none';
+          spinner.classList.remove('spin');
+          spin.style.animation = '';
+        }
+      }, {
+        once: true
+      });
+    };
+
+    const handleProgress = () => {
+      // Update the progress bar.
+      const percent = (audio.currentTime / audio.duration) * 100;
+      progressBar.style.flexBasis = `${percent}%`;
+
+      // Skip to next track if at the end of the song.
+      if (percent === 100) {
+        trackSwitch = true;
+        handleForwardButton();
+      }
+    };
+
+    const handleBackButton = () => {
+      if (audio.currentTime <= 3) {
+        const currentTrackId = parseInt(audioSource.dataset.trackid);
+        const previousTrackId = currentTrackId === 1 ? '10' : (currentTrackId - 1).toString();
+        const previousTrack = tracks.find(o => o.id === previousTrackId);
+        changeTrack(previousTrack);
+      } else {
+        audio.currentTime = 0;
+      }
+    };
+
+    const handleForwardButton = () => {
+      const currentTrackId = parseInt(audioSource.dataset.trackid);
+      const nextTrackId = currentTrackId === 10 ? '1' : (currentTrackId + 1).toString();
+      const nextTrack = tracks.find(o => o.id === nextTrackId);
+      changeTrack(nextTrack);
+    };
+
+    const changeTrack = (track) => {
+      if (playing) trackSwitch = true;
+      audioSource.setAttribute('src', track.src);
+      audioSource.dataset.trackid = track.id;
+      songTitle.innerHTML = track.title;
+      songArtist.innerHTML = track.artist;
+      spinnerDisc.style.backgroundImage = `url(${track.cover})`;
+      audio.load();
+      if (playing) {
+        audio.addEventListener('canplay', () => {
+          audio.play();
+        }, {
+          once: true
+        });
+        audio.addEventListener('play', () => {
+          trackSwitch = false;
+        }, {
+          once: true
+        });
+      }
+    };
+
+    function scrub(e) {
+      const scrubTime = (e.offsetX / progress.offsetWidth) * audio.duration;
+      audio.currentTime = scrubTime;
     }
-  }, {
-    once: true
-  });
-};
 
-const handleProgress = () => {
-  // Update the progress bar.
-  const percent = (audio.currentTime / audio.duration) * 100;
-  progressBar.style.flexBasis = `${percent}%`;
-  
-  // Skip to next track if at the end of the song.
-  if (percent === 100) {
-    trackSwitch = true;
-    handleForwardButton();
-  }
-};
+    audio.addEventListener('play', startSpin);
+    audio.addEventListener('play', toggleSongPanel);
+    audio.addEventListener('pause', stopSpin)
+    audio.addEventListener('pause', toggleSongPanel);
+    audio.addEventListener('timeupdate', handleProgress);
 
-const handleBackButton = () => {
-  if (audio.currentTime <= 3) {
-    const currentTrackId = parseInt(audioSource.dataset.trackid);
-    const previousTrackId = currentTrackId === 1 ? '10' : (currentTrackId - 1).toString();
-    const previousTrack = tracks.find(o => o.id === previousTrackId);
-    changeTrack(previousTrack);
-  } else {
-    audio.currentTime = 0;
-  }
-};
+    backButton.addEventListener('click', handleBackButton);
+    playButton.addEventListener('click', togglePlay);
+    forwardButton.addEventListener('click', handleForwardButton);
 
-const handleForwardButton = () => {
-  const currentTrackId = parseInt(audioSource.dataset.trackid);
-  const nextTrackId = currentTrackId === 10 ? '1' : (currentTrackId + 1).toString();
-  const nextTrack = tracks.find(o => o.id === nextTrackId);
-  changeTrack(nextTrack);
-};
-
-const changeTrack = (track) => {
-  if (playing) trackSwitch = true;
-  audioSource.setAttribute('src', track.src);
-  audioSource.dataset.trackid = track.id;
-  songTitle.innerHTML = track.title;
-  songArtist.innerHTML = track.artist;
-  spinnerDisc.style.backgroundImage = `url(${track.cover})`;
-  audio.load();
-  if (playing) {
-    audio.addEventListener('canplay', () => {
-      audio.play();
-    }, {
-      once: true
-    });
-    audio.addEventListener('play', () => {
-      trackSwitch = false;
-    }, {
-      once: true
-    });
-  }
-};
-
-function scrub(e) {
-    const scrubTime = (e.offsetX / progress.offsetWidth) * audio.duration;
-    audio.currentTime = scrubTime;
-}
-
-audio.addEventListener('play', startSpin);
-audio.addEventListener('play', toggleSongPanel);
-audio.addEventListener('pause', stopSpin)
-audio.addEventListener('pause', toggleSongPanel);
-audio.addEventListener('timeupdate', handleProgress);
-
-backButton.addEventListener('click', handleBackButton);
-playButton.addEventListener('click', togglePlay);
-forwardButton.addEventListener('click', handleForwardButton);
-
-let mousedown = false;
-progress.addEventListener('click', scrub);
-progress.addEventListener('mousemove', (e) => mousedown && scrub(e));
-progress.addEventListener('mousedown', () => mousedown = true);
-progress.addEventListener('mouseup', () => mousedown = false);
+    let mousedown = false;
+    progress.addEventListener('click', scrub);
+    progress.addEventListener('mousemove', (e) => mousedown && scrub(e));
+    progress.addEventListener('mousedown', () => mousedown = true);
+    progress.addEventListener('mouseup', () => mousedown = false);
 
 	}
 }
 </script>
 
-<style>
+<style lang="scss">
 @import url("https://use.fontawesome.com/releases/v5.7.0/css/all.css");
 @import url("https://fonts.googleapis.com/css?family=Roboto");
+
 * {
   box-sizing: border-box;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   outline: none;
 }
-
 body {
   font-size: 62.5%;
   background-color: #FCF1F5;
@@ -203,7 +204,6 @@ body {
   margin: 0;
   padding: 0;
 }
-
 .player {
   display: flex;
   align-items: center;
@@ -219,8 +219,9 @@ body {
   display: flex;
   justify-content: flex-end;
   padding: 10px;
-  box-shadow: 0px 33px 90px 11px rgba(147, 84, 103, 0.6);
+  box-shadow: 0px 33px 90px 11px rgba(147,84,103,.6);
 }
+
 
 * {
   box-sizing: border-box;
@@ -237,26 +238,28 @@ body {
   transition: all 1s ease;
   width: 395px;
   z-index: 0;
-  box-shadow: 0px 33px 90px 11px rgba(147, 84, 103, 0.6);
-}
-.song-panel .song-info {
+  box-shadow: 0px 33px 90px 11px rgba(147,84,103,.6);
+
+.song-info {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   width: 230px;
-}
-.song-panel .song-info .song-info__title {
+
+.song-info__title {
   color: #444b59;
   font-size: 0.8rem;
   font-weight: bold;
   margin-bottom: 5px;
 }
-.song-panel .song-info .song-info__artist {
+
+.song-info__artist {
   color: #a5a7af;
   font-size: 0.7rem;
   margin-bottom: 10px;
 }
-.song-panel .song-info .progress {
+
+.progress {
   background: #fff;
   border-radius: 3px;
   cursor: ew-resize;
@@ -267,16 +270,20 @@ body {
   position: relative;
   transition: height 0.3s;
   width: 100%;
-}
-.song-panel .song-info .progress .progress__filled {
+
+.progress__filled {
   background: #fc8da8;
   flex: 0;
   flex-basis: 0%;
   width: 50%;
 }
-.song-panel.playing {
-  transform: translate3d(0, 0, 0);
-  transition: all 1s ease;
+}
+}
+
+&.playing {
+   transform: translate3d(0, 0, 0);
+   transition: all 1s ease;
+ }
 }
 
 button {
@@ -295,7 +302,6 @@ button:hover, button.playing {
   background-color: #E0DEE1;
   color: #fff;
 }
-
 button.play span.pause {
   background-color: white;
   position: absolute;
@@ -305,7 +311,7 @@ button.play span.pause {
   display: block;
   border-radius: 3px;
   opacity: 0;
-  transition: all 0.5s ease;
+  transition: all .5s ease;
 }
 
 button.play span.pause.left {
@@ -315,7 +321,7 @@ button.play span.pause.left {
 button.play.playing span.pause.left {
   left: 25px;
   opacity: 1;
-  transition: left 0.5s ease, opacity 0.8s ease;
+  transition: left .5s ease, opacity .8s ease;
 }
 
 button.play span.pause.right {
@@ -325,23 +331,21 @@ button.play span.pause.right {
 button.play.playing span.pause.right {
   right: 25px;
   opacity: 1;
-  transition: right 0.5s ease, opacity 0.8s ease;
+  transition: right .5s ease, opacity .8s ease;
 }
-
 button.play i {
   opacity: 1;
-  transition: opacity 0.5s ease;
+  transition: opacity .5s ease;
 }
-
 button.play.playing i {
   opacity: 0;
-  transition: all 0.5s ease;
+  transition: all .5s ease;
 }
 
 .player-controls {
   position: relative;
-}
-.player-controls .spinner {
+
+.spinner {
   height: 130px;
   width: 130px;
   position: absolute;
@@ -350,11 +354,12 @@ button.play.playing i {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-.player-controls .spinner.spin {
-  animation: spin 5s linear infinite;
-}
-.player-controls .spinner .spinner__disc {
+
+&.spin {
+   animation: spin 5s linear infinite;
+ }
+
+.spinner__disc {
   height: 110px;
   width: 110px;
   border-radius: 50%;
@@ -365,20 +370,25 @@ button.play.playing i {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-.player-controls .spinner .spinner__disc.scale {
-  transform: scale(1.17);
-  transition: all 1s ease;
-}
-.player-controls .spinner .spinner__disc.scale .center__disc {
+
+&.scale {
+   transform: scale(1.17);
+   transition: all 1s ease;
+
+.center__disc {
   color: #e4d6e9;
   transition: all 1s ease;
 }
-.player-controls .spinner .spinner__disc .center__disc {
+}
+
+.center__disc {
   background-color: white;
   height: 25px;
   width: 25px;
   border-radius: 50%;
+}
+}
+}
 }
 
 @keyframes spin {
