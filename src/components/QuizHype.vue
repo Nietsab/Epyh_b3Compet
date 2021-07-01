@@ -2,93 +2,77 @@
   <div class="quiz">
     <h1 class="quiz-title">Test ton niveau de hype</h1>
 
-    <form class="form-quiz" @submit="checkForm" method="post" >
-      <div class="questions">
-        <b-container class="carousel_container">
-          <b-row>
-            <b-col cols="12">
-              <carousel :perPage="3" :navigationEnabled="true">
-              <form>
-                <slide class="p-2">
-                  <input type="radio" value="1" v-model="Question1">
-                  <label>
-                  <b-card title="Card Title 1" img-src="https://i.ibb.co/3sF6T4r/Lidl.png" img-alt="Image" img-top
-                          tag="article">
-                  </b-card>
-                  </label>
-                  <span>qdfq: {{ Question1 }}</span>
-                  <input type="submit" value="submit">
-                </slide>
-                <slide class="p-2">
-                  <b-card title="Card Title 2" img-src="https://i.ibb.co/3sF6T4r/Lidl.png" img-alt="Image" img-top tag="article">
-                  </b-card>
-                </slide>
-                <slide class="p-2">
-                  <b-card title="Card Title 3" img-src="https://i.ibb.co/3sF6T4r/Lidl.png" img-alt="Image" img-top tag="article">
-                  </b-card>
-                </slide>
-                <slide class="p-2">
-                  <b-card title="Card Title 4" img-src="https://i.ibb.co/3sF6T4r/Lidl.png" img-alt="Image" img-top tag="article">
-                  </b-card>
-                </slide>
-                </form>
-              </carousel>
-            </b-col>
-          </b-row>
-        </b-container>
-      </div>
-    </form>
+    <div class="questions">
+      <form action="">
+        <div class="question">
+          <input type="radio" name="question1" id="lidl-1" value="q1-1">
+          <label for="lidl-1"
+                 class="question-img"><img class="img-question-width" src="../assets/img/quiz-question.png" alt=""></label>
+          <input type="radio" name="question1" id="logo-1" value="q1-2">
+          <label for="logo-1"
+                 class="question-img"><img class="img-question-width" src="../assets/img/quiz-question.png" alt=""></label>
+          <input type="radio" name="question1" id="logo-2" value="q1-3">
+          <label for="logo-1" class="question-img"><img class="img-question-width" src="../assets/img/quiz-question.png" alt=""></label>
+          <input type="radio" name="question1" id="logo-3" value="q1-4">
+          <label for="logo-1" class="question-img"><img class="img-question-width" src="../assets/img/quiz-question.png" alt=""></label>
+        </div>
+          <input type="submit" value="submit"/>
+      </form>
+    </div>
   </div>
 </template>
 
 <script>
-import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
-import 'bootstrap/dist/css/bootstrap.css'
-import 'bootstrap-vue/dist/bootstrap-vue.css'
-import Vue from 'vue'
+import { BootstrapVue, IconsPlugin } from 'bootstrap-vue';
+import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap-vue/dist/bootstrap-vue.css';
+import Vue from 'vue';
 import VueCarousel from "vue-carousel";
+
 
 Vue.use(VueCarousel);
 Vue.use(BootstrapVue);
 Vue.use(IconsPlugin);
 
-
 export default {
-  name: "QuizHype",
-  data() {
-    return {
-      Question: [],
-    }
+  name: 'QuizHype',
+  components: {
+    // FlowForm
   },
-  created() {
-    this.Question= {
-      name: 'Q1',
-      question: 'Comment ',
-      type: 'radio',
-      options: [
-        { img: '../assets/lidl.png', value: '0'},
-        { img: '../assets/lidl.png', value: '1'}
-      ]
-    }
-  }
 }
 </script>
 
 <style lang="scss">
+@import '~@ditdot-dev/vue-flow-form/dist/vue-flow-form.css';
+
 .quiz {
-  background-color: #CC1237;
   padding-bottom: 80px;
 
   .quiz-title {
     font-family: Poppins;
     font-weight: bold;
     font-size: 40px;
-    color: #ffffff;
+    color: #CC1237;
     text-transform: uppercase;
     padding-top: 30px;
   }
 
-  .questions{
+  .img-question{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .question-img :hover {
+    opacity: .5;
+  }
+
+  .img-question-width{
+    width: 300px;
+  }
+
+  input[type="radio"]{
+    display: none;
   }
 }
 </style>

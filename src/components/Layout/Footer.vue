@@ -40,88 +40,88 @@
           <p style="color: #ffffff">Contactez-nous</p><br>
         </div>
         <div class="column is-one-quarter contact" style="margin-left: 0; height: 1%">
-          <iframe width="600" height="600"
-                  src="https://2f9c1cb5.sibforms.com/serve/MUIEAGB1rulXj5J4eu3EtgnXM_OLnivOpLywm5A-B6Baz1aCOwLVgnxo17Wp5u7FaApf2TKmHrly7p9F4jf4-K7traHLgyNLntotesvP4mBK5dpt3WDcEqp72rJy58VEAGJKpgi-kGI0ep58K9VQe1fv2rv1ENf6gShDBYfrL4N2q0qqrvT6aS5gbMtU7vYiGXxYcZ8nf5qUgEnp" frameborder="0" scrolling="auto" allowfullscreen style="display: block;margin-left: auto;margin-right: auto;max-width: 100%;"></iframe>
-<!--          <div class="sib-form" style="text-align: center;-->
-<!--         background-color: transparent;                                           ">-->
-<!--            <div id="sib-form-container" class="sib-form-container">-->
-<!--              <div id="sib-container" class="sib-container&#45;&#45;large sib-container&#45;&#45;vertical" style="text-align:center; background-color:rgba(0,3,5,1); max-width:540px; border-radius:3px; border-width:0px; border-color:#C0CCD9; border-style:solid;">-->
-<!--                <form id="sib-form" method="POST" action="https://2f9c1cb5.sibforms.com/serve/MUIEAL52sysRpIBRNuYiS6qWNACS2pQS8uJgDOXgGbuzfC8LXsfKE08mrZYdC0OqCShWvQVzZoSdtU3LJFaBnG1LsIHgtsdZUkyHYBoK5tJ6XdnMRJLZjL5tPDZvRgIjZOmiQVDnbsvgBUpQp5Dtk0p1giuH5xwW775weRHRkChi4PZPJzX9R2FLObJj2Zz_HO_6YxJpVuUvdvrX">-->
-<!--                  <div style="padding: 8px 0;">-->
-<!--                    <div class="sib-form-block"-->
-<!--                         style="font-size:22px; text-align:left; font-family:Poppins; font-weight: 600;-->
-<!--                         font-style: normal;-->
-<!--                          color:#ffffff; background-color:transparent;">-->
-<!--                      <div style="width: 107%;" class="sib-text-form-block">-->
-<!--                        <p>Inscription à la newsletter</p>-->
-<!--                      </div>-->
-<!--                    </div>-->
-<!--                  </div>-->
-<!--                  <div style="padding: 8px 0;">-->
-<!--                    <div class="sib-input sib-form-block">-->
-<!--                      <div class="form__entry entry_block">-->
-<!--                        <div class="form__label-row ">-->
+<!--          <iframe width="600" height="600"-->
+<!--                  src="https://2f9c1cb5.sibforms.com/serve/MUIEAGB1rulXj5J4eu3EtgnXM_OLnivOpLywm5A-B6Baz1aCOwLVgnxo17Wp5u7FaApf2TKmHrly7p9F4jf4-K7traHLgyNLntotesvP4mBK5dpt3WDcEqp72rJy58VEAGJKpgi-kGI0ep58K9VQe1fv2rv1ENf6gShDBYfrL4N2q0qqrvT6aS5gbMtU7vYiGXxYcZ8nf5qUgEnp" frameborder="0" scrolling="auto" allowfullscreen style="display: block;margin-left: auto;margin-right: auto;max-width: 100%;"></iframe>-->
+          <div class="sib-form" style="text-align: center;
+         background-color: transparent;                                           ">
+            <div id="sib-form-container" class="sib-form-container">
+              <div id="sib-container" class="sib-container--large sib-container--vertical" style="text-align:center; background-color:rgba(0,3,5,1); max-width:540px; border-radius:3px; border-width:0px; border-color:#C0CCD9; border-style:solid;">
+                <form id="sib-form" method="POST" action="https://2f9c1cb5.sibforms.com/serve/MUIEAL52sysRpIBRNuYiS6qWNACS2pQS8uJgDOXgGbuzfC8LXsfKE08mrZYdC0OqCShWvQVzZoSdtU3LJFaBnG1LsIHgtsdZUkyHYBoK5tJ6XdnMRJLZjL5tPDZvRgIjZOmiQVDnbsvgBUpQp5Dtk0p1giuH5xwW775weRHRkChi4PZPJzX9R2FLObJj2Zz_HO_6YxJpVuUvdvrX">
+                  <div style="padding: 8px 0;">
+                    <div class="sib-form-block"
+                         style="font-size:22px; text-align:left; font-family:Poppins; font-weight: 600;
+                         font-style: normal;
+                          color:#ffffff; background-color:transparent;">
+                      <div style="width: 107%;" class="sib-text-form-block">
+                        <p>Inscription à la newsletter</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div style="padding: 8px 0;">
+                    <div class="sib-input sib-form-block">
+                      <div class="form__entry entry_block">
+                        <div class="form__label-row ">
 
-<!--                          <div class="entry__field">-->
-<!--                            <input class="input" maxlength="200" type="text" id="PRENOM" name="PRENOM"-->
-<!--                                   autocomplete="off" placeholder="Nom Complet*" data-required="true" required />-->
-<!--                          </div>-->
-<!--                        </div>-->
+                          <div class="entry__field">
+                            <input class="input" maxlength="200" type="text" id="PRENOM" name="PRENOM"
+                                   autocomplete="off" placeholder="Nom Complet*" data-required="true" required />
+                          </div>
+                        </div>
 
-<!--                        <label class="entry__error entry__error&#45;&#45;primary" style="font-size:16px; text-align:left; font-family:&quot;Helvetica&quot;, sans-serif; color:#661d1d; background-color:#ffeded; border-radius:3px; border-color:#ff4949;">-->
-<!--                        </label>-->
-<!--                      </div>-->
-<!--                    </div>-->
-<!--                  </div>-->
-<!--                  <div style="padding: 8px 0;">-->
-<!--                    <div class="sib-input sib-form-block">-->
-<!--                      <div class="form__entry entry_block">-->
-<!--                        <div class="form__label-row ">-->
+                        <label class="entry__error entry__error--primary" style="font-size:16px; text-align:left; font-family:&quot;Helvetica&quot;, sans-serif; color:#661d1d; background-color:#ffeded; border-radius:3px; border-color:#ff4949;">
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div style="padding: 8px 0;">
+                    <div class="sib-input sib-form-block">
+                      <div class="form__entry entry_block">
+                        <div class="form__label-row ">
 
-<!--                          <div class="entry__field">-->
-<!--                            <input class="input" type="text" id="EMAIL" name="EMAIL" autocomplete="off" placeholder="Email*" data-required="true" required />-->
-<!--                          </div>-->
-<!--                        </div>-->
+                          <div class="entry__field">
+                            <input class="input" type="text" id="EMAIL" name="EMAIL" autocomplete="off" placeholder="Email*" data-required="true" required />
+                          </div>
+                        </div>
 
-<!--                        <label class="entry__error entry__error&#45;&#45;primary" style="font-size:16px; text-align:left; font-family:&quot;Helvetica&quot;, sans-serif; color:#661d1d; background-color:#ffeded; border-radius:3px; border-color:#ff4949;">-->
-<!--                        </label>-->
-<!--                      </div>-->
-<!--                    </div>-->
-<!--                  </div>-->
-<!--                  <div style="padding: 8px 0;">-->
-<!--                    <div class="sib-optin sib-form-block" data-required="true">-->
-<!--                      <div class="form__entry entry_mcq">-->
-<!--                        <div class="form__label-row ">-->
-<!--                          <div class="entry__choice">-->
-<!--                            <label>-->
-<!--                              <input type="checkbox" class="input_replaced" value="1" id="OPT_IN" name="OPT_IN" required />-->
-<!--                              <span class="checkbox checkbox_tick_positive"></span><span style="font-size:14px; text-align:left; font-family:&quot;Helvetica&quot;, sans-serif; color:#ffffff; background-color:transparent;"><p>J'accepte de recevoir vos e-mails</p><span data-required="*" style="display: inline;" class="entry__label entry__label_optin"></span></span> </label>-->
-<!--                          </div>-->
-<!--                        </div>-->
-<!--                        <label class="entry__error entry__error&#45;&#45;primary" style="font-size:16px; text-align:left; font-family:&quot;Helvetica&quot;, sans-serif; color:#661d1d; background-color:#ffeded; border-radius:3px; border-color:#ff4949;">-->
-<!--                        </label>-->
-<!--                        <label class="entry__specification" style="font-size:11px; text-align:left; font-style:italic; font-family:&quot;Helvetica&quot;, sans-serif; color:#ffffff;">-->
-<!--                          Vous pouvez vous désinscrire à tout moment en cliquant sur le lien présent dans nos emails.-->
-<!--                        </label>-->
-<!--                      </div>-->
-<!--                    </div>-->
-<!--                  </div>-->
-<!--                  <div style="position: relative; bottom: 16rem; left: 12rem;">-->
-<!--                    <div class="sib-form-block" style="text-align: center">-->
-<!--                      <button class="" style="border: 0; text-align:center;background-color: transparent;"-->
-<!--                              form="sib-form"-->
-<!--                              type="submit">-->
-<!--                        <img src="../../assets/img/newsletter_button.png" alt="">-->
-<!--                      </button>-->
-<!--                    </div>-->
-<!--                  </div>-->
-<!--                  <input type="text" name="email_address_check" value="" class="input&#45;&#45;hidden">-->
-<!--                  <input type="hidden" name="locale" value="fr">-->
-<!--                  <input type="hidden" name="html_type" value="simple">-->
-<!--                </form>-->
-<!--              </div>-->
-<!--            </div>-->
-<!--          </div>-->
+                        <label class="entry__error entry__error--primary" style="font-size:16px; text-align:left; font-family:&quot;Helvetica&quot;, sans-serif; color:#661d1d; background-color:#ffeded; border-radius:3px; border-color:#ff4949;">
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div style="padding: 8px 0;">
+                    <div class="sib-optin sib-form-block" data-required="true">
+                      <div class="form__entry entry_mcq">
+                        <div class="form__label-row ">
+                          <div class="entry__choice">
+                            <label>
+                              <input type="checkbox" class="input_replaced" value="1" id="OPT_IN" name="OPT_IN" required />
+                              <span class="checkbox checkbox_tick_positive"></span><span style="font-size:14px; text-align:left; font-family:&quot;Helvetica&quot;, sans-serif; color:#ffffff; background-color:transparent;"><p>J'accepte de recevoir vos e-mails</p><span data-required="*" style="display: inline;" class="entry__label entry__label_optin"></span></span> </label>
+                          </div>
+                        </div>
+                        <label class="entry__error entry__error--primary" style="font-size:16px; text-align:left; font-family:&quot;Helvetica&quot;, sans-serif; color:#661d1d; background-color:#ffeded; border-radius:3px; border-color:#ff4949;">
+                        </label>
+                        <label class="entry__specification" style="font-size:11px; text-align:left; font-style:italic; font-family:&quot;Helvetica&quot;, sans-serif; color:#ffffff;">
+                          Vous pouvez vous désinscrire à tout moment en cliquant sur le lien présent dans nos emails.
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div style="position: relative; bottom: 16rem; left: 12rem;">
+                    <div class="sib-form-block" style="text-align: center">
+                      <button class="" style="border: 0; text-align:center;background-color: transparent;"
+                              form="sib-form"
+                              type="submit">
+                        <img src="../../assets/img/newsletter_button.png" alt="">
+                      </button>
+                    </div>
+                  </div>
+                  <input type="text" name="email_address_check" value="" class="input--hidden">
+                  <input type="hidden" name="locale" value="fr">
+                  <input type="hidden" name="html_type" value="simple">
+                </form>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </footer>
