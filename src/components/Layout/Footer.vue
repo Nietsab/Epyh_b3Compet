@@ -1,7 +1,8 @@
 <template>
   <div>
 
-    <cookie-law theme="dark-lime" buttonText="J'accepte" buttonDecline=True buttonDeclineClass="Cookie__button--decline" buttonDeclineText="Je refuse">
+    <cookie-law theme="dark-lime" buttonText="J'accepte" buttonDecline=true buttonDeclineClass="Cookie__button--decline"
+                buttonDeclineText="Je refuse">
       <div slot="message">
         Nous utilisons des cookies pour vous garantir la meilleure expérience sur notre site web. Pour ces raisons, nous pouvons partager les données d'utilisation de notre site avec nos partenaires de publicité et d'analyse. Vous pouvez choisir si vous souhaitez ou non consentir à notre utilisation des cookies via les options suivantes <router-link to="/MentionLegales">Cliquez-ici pour plus d'informations</router-link>
       </div>
