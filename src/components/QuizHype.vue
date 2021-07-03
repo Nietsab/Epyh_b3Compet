@@ -7,16 +7,19 @@
       <div class="question">
         <p v-if="errors[questionIndex]" class="alert alert-danger"> {{ error }}</p>
         <div v-for="(question, index) in quiz.questions" :key="index">
-            <h4 class="mt-5 mb-3">{{ question.text }}</h4>
-          <div v-show="index === questionIndex" class="question-answer">
-            <div v-for="(answer, answerIndex) in question.answers" :key="answerIndex" class="form-check">
-              <label class="form-check-label">
-                <input class="form-check-input radio-reponse" type="radio" :value="answer.value" :name="index"
+          <div v-show="index === questionIndex" class="">
+            <h4 class="">{{ question.quest }}</h4>
+            <div class="question-answer">
+              <div v-for="(answer, answerIndex) in question.answers" :key="answerIndex"
+                   class="form-check">
+                <input :id="answerIndex" class="form-check-input radio-reponse" type="radio" :value="answer.value"
+                       :name="index"
                        v-model="responses[index]">
-                <img :src="answer.text" alt="">
-              </label>
+                <label :for="answerIndex" class="form-check-label ">
+                  <img :src="answer.text" alt="">
+                </label>
+              </div>
             </div>
-
             <div class="mt-5">
               <button class="btn btn-primary" v-if="questionIndex > 0" @click="prev">prev</button>
               <button class="btn btn-secondary" @click="next">next</button>
@@ -41,10 +44,10 @@ let quiz = {
   title:  "Test ton niveau de hype",
   questions : [
     {
-      text: 'Comment vous habillez-vous l\'été',
+      quest: 'Comment vous habillez-vous l\'été',
       answers: [
         {
-          text: 'https://i.ibb.co/7QFYjKL/Q1-R2.png',
+          text: 'https://i.ibb.co/xJqYGSg/Q1-R1.png',
           value: 1
         },
         {
@@ -60,17 +63,23 @@ let quiz = {
       ],
     },
     {
-      text: 'Question 2',
+      quest: 'Question 2',
       answers: [
         {
-          text: 'qss',
+          text: 'https://i.ibb.co/7QFYjKL/Q1-R2.png',
           value: 4
         },
         {
-          text: 'rés 2',
-          value: 3
+          text: 'https://i.ibb.co/7QFYjKL/Q1-R2.png',
+          value: 5
+        }, {
+          text: 'https://i.ibb.co/7QFYjKL/Q1-R2.png',
+          value: 56
+        }, {
+          text: 'https://i.ibb.co/7QFYjKL/Q1-R2.png',
+          value: 47
         }
-      ]
+      ],
     }
   ]
 };
@@ -83,7 +92,7 @@ export default {
       questionIndex: 0,
       responses: [],
       errors: [],
-      error: '',
+      error: ''
     }
   },
   methods: {
@@ -129,7 +138,7 @@ export default {
     opacity: .5;
   }
 
-  .radio-reponse :checked {
+  input[type=radio]:checked + label>img {
     opacity: .5;
   }
 
@@ -138,7 +147,8 @@ export default {
   }
 
   input[type="radio"]{
-    display: none;
+    position: absolute;
+    left: -9999px;
   }
 }
 </style>
