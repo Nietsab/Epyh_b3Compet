@@ -17,7 +17,6 @@
                        v-model="responses[index]">
                 <label :for="answer.value" class="form-check-label ">
                   <img :src="answer.text" alt="">
-                  {{ answer.value }}
                 </label>
               </div>
             </div>
@@ -31,7 +30,7 @@
         </div>
 
         <div v-show="questionIndex === quiz.questions.length">
-          <p>Ton niveau de hype est {{ score() }}</p>
+          <p>Ton niveau de hype est de {{ score() }} %</p>
         </div>
       </div>
     </div>
@@ -54,17 +53,17 @@ let quiz = {
       quest: 'Comment vous habillez-vous l\'été',
       answers: [
         {
-          text: 'https://i.ibb.co/xJqYGSg/Q1-R1.png',
+          text: 'https://i.ibb.co/tHfK3ZH/95-214-46-125-60e09c77072e1.jpg',
           value: 1
         },
         {
-          text: 'https://i.ibb.co/xJqYGSg/Q1-R1.png',
+          text: 'https://i.ibb.co/tHfK3ZH/95-214-46-125-60e09c77072e1.jpg',
           value: 2
         }, {
-          text: 'https://i.ibb.co/xJqYGSg/Q1-R1.png',
+          text: 'https://i.ibb.co/tHfK3ZH/95-214-46-125-60e09c77072e1.jpg',
           value: 54
         }, {
-          text: 'https://i.ibb.co/xJqYGSg/Q1-R1.png',
+          text: 'https://i.ibb.co/tHfK3ZH/95-214-46-125-60e09c77072e1.jpg',
           value: 43
         }
       ],
@@ -117,7 +116,7 @@ export default {
     },
 
     score: function() {
-
+      return this.responses[0] + this.responses[1]
     }
   }
 }
@@ -146,11 +145,18 @@ export default {
   }
 
   .question-answer :hover {
-    opacity: .5;
+    //opacity: .5;
   }
 
-  input[type=radio]:checked + label>img {
-    opacity: .5;
+  input[type=radio]:checked + img{
+    border: 10px solid rgba(204, 18, 55, 0.7);
+    box-sizing: border-box;
+    filter: drop-shadow(0px 20px 40px rgba(0, 0, 0, 0.11));
+    border-radius: 0px;
+  }
+
+  input[type=radio]:checked + label>img{
+    background-image: url("../assets/img/Quiz/Rectangle 347.png");
   }
 
   .img-question-width{
