@@ -156,8 +156,10 @@ export default {
   }
 
   input[type=radio]:checked + label>img{
-    background-image: url("../assets/img/Quiz/Rectangle 347.png");
-  }
+    border: 10px solid rgba(204, 18, 55, 0.7);
+    box-sizing: border-box;
+    filter: drop-shadow(0px 20px 40px rgba(0, 0, 0, 0.11));
+    border-radius: 0px;  }
 
   .img-question-width{
     width: 300px;
