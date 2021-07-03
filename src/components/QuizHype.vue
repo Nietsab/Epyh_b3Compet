@@ -12,19 +12,26 @@
             <div class="question-answer">
               <div v-for="(answer, answerIndex) in question.answers" :key="answerIndex"
                    class="form-check">
-                <input :id="answerIndex" class="form-check-input radio-reponse" type="radio" :value="answer.value"
+                <input :id="answer.value" class="form-check-input radio-reponse" type="radio" :value="answer.value"
                        :name="index"
                        v-model="responses[index]">
-                <label :for="answerIndex" class="form-check-label ">
+                <label :for="answer.value" class="form-check-label ">
                   <img :src="answer.text" alt="">
+                  {{ answer.value }}
                 </label>
               </div>
             </div>
+
+
             <div class="mt-5">
               <button class="btn btn-primary" v-if="questionIndex > 0" @click="prev">prev</button>
               <button class="btn btn-secondary" @click="next">next</button>
             </div>
           </div>
+        </div>
+
+        <div v-show="questionIndex === quiz.questions.length">
+          <p>Ton niveau de hype est {{ score() }}</p>
         </div>
       </div>
     </div>
@@ -107,6 +114,10 @@ export default {
         this.errors[this.questionIndex] = 0;
         this.questionIndex++;
       }
+    },
+
+    score: function() {
+
     }
   }
 }
