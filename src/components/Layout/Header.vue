@@ -7,235 +7,205 @@
     <meta name="robots" content="index,noodp,follow"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui" />
 
-
-    <header class="header-outer">
-      <div class="header-inner responsive-wrapper">
-        <div class="header-logo">
-          <a href="" class="">
-            <img class="image is-48x48" src="../../assets/img/logo.png" alt="">
-          </a>
-        </div>
-
-        <nav class="header-navigation">
-          <a href="" class="nav-element">Personnal Shopper</a>
-          <a href="" class="">Actus</a>
-          <a href="" class="">Podcast</a>
-          <a href="" class="">Interview</a>
-        </nav>
-      </div>
+    <header>
+      <a class="logo" href="/"><img src="../../assets/img/logo.png" alt="logo"></a>
+      <nav>
+        <ul class="nav__links">
+          <li><a href="#">Personnal Shopper</a></li>
+          <li><a href="#">Actus</a></li>
+          <li><a href="#">Podcast</a></li>
+          <li><a href="#">Interview</a></li>
+        </ul>
+      </nav>
+      <p class="menu cta">Menu</p>
     </header>
+    <div id="mobile__menu" class="overlay">
+      <a class="close">&times;</a>
+      <div class="overlay__content">
+        <li><a href="#">Personnal Shopper</a></li>
+        <li><a href="#">Actus</a></li>
+        <li><a href="#">Podcast</a></li>
+        <li><a href="#">Interview</a></li>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
+import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
+import Vue from 'vue'
+
+Vue.use(BootstrapVue)
+Vue.use(IconsPlugin)
 // import('../../assets/player.js');
 export default {
-  name: 'Header'
+  name: 'Header',
+  mounted() {
+    const doc = document;
+    const menuOpen = doc.querySelector(".menu");
+    const menuClose = doc.querySelector(".close");
+    const overlay = doc.querySelector(".overlay");
+
+    menuOpen.addEventListener("click", () => {
+      overlay.classList.add("overlay--active");
+    });
+
+    menuClose.addEventListener("click", () => {
+      overlay.classList.remove("overlay--active");
+    });
+
+  }
 }
 </script>
 
 <style lang="scss">
 @import url("https://use.fontawesome.com/releases/v5.7.0/css/all.css");
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
-
-//* {
-//  box-sizing: border-box;
-//  font-family: "Roboto", sans-serif;
-//  outline: none;
-//}
-
-//body {
-//  font-size: 62.5%;
-//  background-color: #FCF1F5;
-//  height: 100vh;
-//  width: 100vw;
-//  margin: 0;
-//  padding: 0;
-//}
-//
-//.header{
-//  .navbar{
-//    background-color: #000000;
-//    border-radius: 0px 0px 25px 25px;
-//    height: 5rem;
-//    //display: flex;
-//    //justify-content: space-around;
-//
-//    .navbar-content{
-//      display: flex;
-//      justify-content: space-evenly;
-//      align-items: center;
-//
-//      .navbar-text{
-//        font-family: Poppins;
-//        text-decoration: none;
-//        font-weight: bold;
-//        font-size: 24px;
-//        line-height: 36px;
-//      }
-//    }
-//  }
-//}
+@import url('https://fonts.googleapis.com/css?family=Roboto');
 
 
-*,
-*:after,
-*:before {
+* {
   box-sizing: border-box;
-}
-
-:root {
-  /* Banner */
-  --banner-outer-height: 75px;
-  --banner-inner-height: 50px;
-  --banner-height-difference: calc(
-      var(--banner-outer-height) - var(--banner-inner-height)
-  );
-  --banner-bg: #ffc75f;
-
-  /* Header */
-  --header-outer-height: 110px;
-  --header-inner-height: 70px;
-  --header-bg: #FFF;
-}
-
-body {
-  line-height: 1.5;
-  position: relative;
-}
-
-
-a {
-  color: inherit ;
-}
-
-.nav-element :hover{
-  color: red;
-}
-
-.responsive-wrapper {
-  width: 90%;
-  max-width: 1280px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* Sticky banner */
-.banner-outer {
-  /* Make it stick */
-  height: var(--banner-outer-height);
-  position: sticky;
-  top: calc(var(--banner-height-difference) * -1); /* Multiply by -1 to get a negative value */
-  display: flex;
-  align-items: center;
-
-  /* Other */
-  background-color: var(--banner-bg);
-  z-index: 1;
-}
-
-.banner-inner {
-  /* Make it stick */
-  height: var(--banner-inner-height);
-  position: sticky;
-  top: 0;
-
-  /* Other */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  line-height: 1.25;
-}
-
-.header-outer {
-  height: var(--header-outer-height);
-  display: flex;
-  align-items: center;
-  background-color: #000000;
-  box-shadow: 0 2px 10px 0 rgba(0,0,0, .1);
-}
-
-.header-inner {
-  height: var(--header-inner-height);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-
-/* Styling of other elements */
-.header-logo img {
-  display: block;
-  height: calc(var(--header-inner-height) - 30px);
-}
-
-.header-navigation {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.header-navigation a,
-.header-navigation button {
-  //font-size: 1.125rem;
-  font-size: 24px;
-  font-family: Poppins;
-  color: inherit;
-  margin-left: 1.75rem;
-  position: relative;
-  font-weight: bold;
-  text-align: center;
-  font-style: normal;
-  line-height: 36px;
-}
-
-.header-navigation a {
-  display: none;
-  font-size: 1.125rem;
-  color: #ffffff;
-  text-decoration: none;
-}
-
-.header-navigation a :hover{
-  color: red;
-}
-
-.header-navigation button {
-  border: 0;
-  background-color: transparent;
+  margin: 0;
   padding: 0;
 }
 
-.header-navigation a:hover:after,
-.header-navigation button:hover:after {
-  transform: scalex(1);
-}
-
-.header-navigation a:after,
-.header-navigation button:after {
-  transition: 0.25s ease;
-  content: "";
-  display: block;
+header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 30px 10%;
+  background: rgba(255, 255, 255, 0.01);
+  backdrop-filter: blur(64px);
+  position: fixed;
   width: 100%;
-  height: 2px;
-  background-color: currentcolor;
-  transform: scalex(0);
-  position: absolute;
-  bottom: -2px;
+}
+
+.logo {
+  margin-right: auto;
+}
+
+.nav__links {
+  list-style: none;
+  display: flex;
+
+}
+
+a{
+  color: #CC1237;
+  font-family: Poppins;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 27px;
+  align-items: center;
+  text-align: center;
+}
+
+.nav__links a,
+.cta,
+.overlay__content a {
+  font-family: Poppins, sans-serif;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.nav__links li {
+  padding: 0px 20px;
+}
+
+.nav__links li a {
+  transition: all 0.3s ease 0s;
+}
+
+.nav__links li a:hover {
+  color: #0088a9;
+}
+
+.cta {
+  margin-left: 20px;
+  padding: 9px 25px;
+  background-color: #CC1237;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+}
+
+.cta:hover {
+  background-color: rgba(0, 136, 169, 0.8);
+}
+
+/* Mobile Nav */
+
+.menu {
+  display: none;
+}
+
+.overlay {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
   left: 0;
+  top: 0;
+  background-color: #24252a;
+  overflow-x: hidden;
+  transition: all 0.5s ease 0s;
 }
 
-.main {
-  margin-top: 3rem;
+.overlay--active {
+  width: 100%;
 }
 
-@media (min-width: 800px) {
-  .header-navigation a {
-    display: inline-block;
+.overlay__content {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay a {
+  padding: 15px;
+  font-size: 36px;
+  display: block;
+  transition: all 0.3s ease 0s;
+}
+
+.overlay a:hover,
+.overlay a:focus {
+  color: #0088a9;
+}
+.overlay .close {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+  color: #edf0f1;
+  cursor: pointer;
+}
+
+@media screen and (max-height: 450px) {
+  .overlay a {
+    font-size: 20px;
   }
+  .overlay .close {
+    font-size: 40px;
+    top: 15px;
+    right: 35px;
+  }
+}
 
-  .header-navgitaion button {
+@media only screen and (max-width: 800px) {
+  .nav__links,
+  .cta {
     display: none;
   }
+  .menu {
+    display: initial;
+  }
 }
+
+
+
 </style>
