@@ -60,8 +60,7 @@ export default {
 
 <style lang="scss">
 @import url("https://use.fontawesome.com/releases/v5.7.0/css/all.css");
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
 
 
 * {

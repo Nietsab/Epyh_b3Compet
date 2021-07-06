@@ -5,7 +5,7 @@
       <b-container>
         <b-row>
           <b-col>
-            <carousel :per-page="1" :pagination-enabled="false" :navigationEnabled="true">
+            <carousel :per-page="q" :pagination-enabled="false" :navigationEnabled="true">
               <slide class="p-2" style="">
                 <b-img class="img-border" src="https://i.ibb.co/3sF6T4r/Lidl.png" img-alt="Image" img-top
                         tag="article">
