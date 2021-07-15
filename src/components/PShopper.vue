@@ -194,6 +194,23 @@ export default {
 </script>
 
 <style scoped lang="scss">
+
+@media (max-width: 1399px) {
+  .Personnal-title {
+    padding-top: 10%;
+  }
+
+  .carousel-personnal {
+    display: block !important;
+  }
+}
+
+@media (max-width: 460px) {
+  .Personnal-title {
+    font-size: 30px !important;
+  }
+}
+
 .Personal {
   padding-top: 10%;
   padding-bottom: 5%;

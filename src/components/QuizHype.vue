@@ -12,7 +12,7 @@
         <div v-for="(question, index) in quiz.questions" :key="index">
           <div v-show="index === questionIndex" class="">
             <div class="count">
-              <span class="current-question">{{ questionIndex }} </span>
+              <span class="current-question">{{ question.num }} </span>
               <span class="length-question">/ {{ quiz.questions.length }}</span>
               <h4 class="quiz-question">{{ question.quest }}</h4>
             </div>
@@ -36,8 +36,8 @@
           </div>
         </div>
 
-        <div v-show="questionIndex === quiz.questions.length">
-          <p>Tu corresponds à un style {{ score() }} </p>
+        <div v-show="questionIndex === quiz.questions.length"><br>
+          <p style="text-align: center">Ton score est de <strong>{{ score() }} </strong> points sur 250 possibles</p>
         </div>
       </div>
     </div>
@@ -58,32 +58,34 @@ let quiz = {
   questions : [
     {
       quest: 'Quelle tenue mettrais-tu en soirée ?',
+      num : 1,
       answers: [
         {
           text: 'https://i.ibb.co/p4dNynK/Outfit1.png',
-          value: 1
+          value: 2
         },
         {
           text: 'https://i.ibb.co/tHfK3ZH/95-214-46-125-60e09c77072e1.jpg',
-          value: 2
-        }, {
-          text: 'https://i.ibb.co/T0W9tPL/Rectangle-345.png',
           value: 4
         }, {
+          text: 'https://i.ibb.co/T0W9tPL/Rectangle-345.png',
+          value: 3
+        }, {
           text: 'https://i.ibb.co/q9SjY6V/Rectangle-346.png',
-          value: 5
+          value: 1
         }
       ],
     },
     {
       quest: 'Quelle tenue préfères-tu pour un premier date?',
+      num : 2,
       answers: [
         {
-          text: 'https://i.ibb.co/tHfK3ZH/95-214-46-125-60e09c77072e1.jpg',
+          text: 'https://i.ibb.co/7Q34MWm/chemise2.jpg',
           value: 6
         },
         {
-          text: 'https://i.ibb.co/tHfK3ZH/95-214-46-125-60e09c77072e1.jpgv',
+          text: 'https://i.ibb.co/xqZ18h3/chemise1.jpg',
           value: 7
         }, {
           text: 'https://i.ibb.co/j8L34WL/Rectangle-345-1.png',
@@ -95,59 +97,62 @@ let quiz = {
       ],
     },
     {
-      quest: 'Quel objet de cette liste serais-tu prêt à acheter ? ?',
+      quest: 'Quel objet de cette liste serais-tu prêt à acheter ?',
+      num : 3,
       answers: [
         {
           text: 'https://i.ibb.co/x12TTM0/Rectangle-344-1.png',
-          value: 10
-        },
-        {
-          text: 'https://i.ibb.co/PtQ9ybz/Rectangle-343.png',
-          value: 11
-        }, {
-          text: 'https://i.ibb.co/MSFC8dX/Rectangle-345-2.png',
-          value: 12
-        }, {
-          text: 'https://i.ibb.co/4pjF2Vk/Rectangle-346-2.png',
-          value: 13
-        }
-      ],
-    },
-    {
-      quest: 'Quelle paire de sneakers est-ce que tu achèterais sans te soucier du prixv ?',
-      answers: [
-        {
-          text: 'https://i.ibb.co/xmbyG1v/Rectangle-347.png',
           value: 14
         },
         {
-          text: 'https://i.ibb.co/HxtCbgt/Rectangle-361.png',
-          value: 15
+          text: 'https://i.ibb.co/PtQ9ybz/Rectangle-343.png',
+          value: 13
         }, {
-          text: 'https://i.ibb.co/C64cgY5/Rectangle-362.png',
-          value: 16
+          text: 'https://i.ibb.co/MSFC8dX/Rectangle-345-2.png',
+          value: 11
         }, {
-          text: 'https://i.ibb.co/WsDvybp/Rectangle-346-3.png',
-          value: 17
+          text: 'https://i.ibb.co/4pjF2Vk/Rectangle-346-2.png',
+          value: 12
         }
       ],
     },
     {
-      quest: 'Quelle tenue mettrais-tu pour traîner avec tes potesv ?',
+      quest: 'Quelle paire de sneakers est-ce que tu achèterais sans te soucier du prix ?',
+      num : 4,
       answers: [
         {
-          text: 'https://i.ibb.co/Yy7VBvq/Rectangle-344-2.png',
+          text: 'https://i.ibb.co/xmbyG1v/Rectangle-347.png',
           value: 18
         },
         {
-          text: 'https://i.ibb.co/dktPKBs/Rectangle-345-3.png',
+          text: 'https://i.ibb.co/HxtCbgt/Rectangle-361.png',
           value: 19
         }, {
+          text: 'https://i.ibb.co/C64cgY5/Rectangle-362.png',
+          value: 17
+        }, {
+          text: 'https://i.ibb.co/WsDvybp/Rectangle-346-3.png',
+          value: 16
+        }
+      ],
+    },
+    {
+      quest: 'Quelle tenue mettrais-tu pour traîner avec tes potes ?',
+      num : 5,
+      answers: [
+        {
+          text: 'https://i.ibb.co/Yy7VBvq/Rectangle-344-2.png',
+          value: 22
+        },
+        {
+          text: 'https://i.ibb.co/dktPKBs/Rectangle-345-3.png',
+          value: 23
+        }, {
           text: 'https://i.ibb.co/X4d1wkr/Rectangle-346-4.png',
-          value: 20
+          value: 21
         }, {
           text: 'https://i.ibb.co/mScD433/Rectangle-343-1.png',
-          value: 21
+          value: 27
         }
       ],
     }
@@ -188,40 +193,7 @@ export default {
     },
 
     score: function() {
-      // return this.responses[0] + this.responses[1]
-      if(this.responses[0]== 1 && this.responses[1]== 5) {
-        return 'Streetwear';
-      } else if (this.responses[0]== 1 && this.responses[1]== 6) {
-        return 'Lifestyle';
-      } else if (this.responses[0]== 1 && this.responses[1]== 7) {
-        return 'Sneakers';
-      } else if (this.responses[0]== 1 && this.responses[1]== 8) {
-        return 'Streetwear';
-      } else if (this.responses[0]== 2 && this.responses[1]== 5) {
-        return 'Lifestyle';
-      } else if (this.responses[0]== 2 && this.responses[1]== 6) {
-        return 'Lifestyle';
-      } else if (this.responses[0]== 2 && this.responses[1]== 7) {
-        return 'Sneakers';
-      } else if (this.responses[0]== 2 && this.responses[1]== 8) {
-        return 'Streetwear';
-      } else if (this.responses[0]== 3 && this.responses[1]== 5) {
-        return 'Sneakers';
-      } else if (this.responses[0]== 3 && this.responses[1]== 6) {
-        return 'Lifestyle';
-      } else if (this.responses[0]== 3 && this.responses[1]== 7) {
-        return 'Streetwear';
-      } else if (this.responses[0]== 3 && this.responses[1]== 8) {
-        return 'Lifestyle';
-      } else if (this.responses[0]== 4 && this.responses[1]== 5) {
-        return 'Streetwear';
-      } else if (this.responses[0]== 4 && this.responses[1]== 6) {
-        return 'Lifestyle';
-      } else if (this.responses[0]== 4 && this.responses[1]== 7) {
-        return 'Sneakers';
-      } else if (this.responses[0]== 4 && this.responses[1]== 8) {
-        return 'Streetwear';
-      }
+      return this.responses[0] + this.responses[1] + this.responses[2] + this.responses[3] + this.responses[4]
     }
   }
 }
@@ -233,6 +205,8 @@ export default {
 
 .quiz {
   padding-bottom: 80px;
+  //background-image: url("../assets/img/Fond_blur.png");
+  //background-size: contain;
 
   .back-blur {
     position: absolute;
@@ -243,6 +217,7 @@ export default {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    flex-wrap: wrap;
   }
 
   .questions {

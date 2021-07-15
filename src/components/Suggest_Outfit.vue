@@ -76,6 +76,15 @@ export default {
 
 <style lang="scss">
 
+.VueCarousel-navigation-next {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+.VueCarousel-navigation-prev {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
 .suggest-content {
   display: flex;
   justify-content: center;

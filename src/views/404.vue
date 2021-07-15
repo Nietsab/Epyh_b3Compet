@@ -1,27 +1,26 @@
 <template>
   <div>
     <Header></Header>
-    <Mention></Mention>
+    <error></error>
     <Footer></Footer>
   </div>
 </template>
 
 <script>
 import Header from "../components/Layout/Header";
-import Mention from '../components/MentionLegales.vue';
+import error from "../components/error";
 import Footer from "../components/Layout/Footer";
 
 export default {
-
-    name: "Home",
-    components: {
-      Header,
-      Mention,
-      Footer
-    }
+  name: "404",
+  components: {
+    Header,
+    error,
+    Footer
+  }
 }
 </script>
 
-<style>
+<style scoped>
 
 </style>

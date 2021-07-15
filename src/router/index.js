@@ -47,6 +47,13 @@ const routes = [
         components: {
             default: () => import('../views/Podcast.vue'),
         }
+    },
+    {
+        path: '/404',
+        name: '404',
+        components: {
+            default: () => import('../views/404.vue')
+        }
     }
 ]
 

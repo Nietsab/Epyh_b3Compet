@@ -27,14 +27,26 @@ export default {
 <style scoped lang="scss">
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
 
+@media (max-width: 1399px) {
+  .Actus_Home {
+    justify-content: center !important;
+  }
+
+  .text {
+    width: 100% !important;
+    margin-left: 3rem !important;
+  }
+}
 
 .Actus_Home {
   display: flex;
+  flex-wrap: wrap;
 
   .text{
     padding-top: 15%;
     margin-left: 14rem;
     text-align: left;
+    width: 40%;
   }
 
   .title {

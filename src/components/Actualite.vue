@@ -31,11 +31,7 @@
             </div>
           </article>
         </div>
-        <router-link class="btn-actu"
-                     :to="{name: 'Actus_content',
-                     params: { title: Actu.Categorie, intro: Actu.intro, content1: Actu.content1, content2: Actu.content2,
-                     img1: Actu.image1, img2: Actu.image2, img3: Actu.image3, img4: Actu.image4, img5: Actu.image5
-                     }}">Voir plus</router-link>
+        <router-link class="btn-actu" to='/404'>Voir plus</router-link>
       </div>
       <br>
     </div>
@@ -56,66 +52,50 @@ export default {
           img: 'https://i.ibb.co/K6MfWTL/Rectangle-32.png',
           Date: '7 Juillet 2021',
           Categorie: 'StreetWear',
-
-
-          image1: 'https://i.ibb.co/rkrXhmN/Streetwear-Cannes-1.png',
-          image2: 'https://i.ibb.co/c1CbC96/Streetwear-Cannes-2.png',
-          image3: 'https://i.ibb.co/nMxdmfX/Streetwear-Cannes-3.png',
-          image4: 'https://i.ibb.co/k3Fn6X5/Streetwear-Cannes-4.png',
-          image5: 'https://i.ibb.co/3TtN1Yq/Streetwear-Cannes-5.png',
-          intro :
-              'Spike Lee le président du jury du Festival de Cannes a fait sensation sur la Croisette avec ses looks épiques.',
-          content1 :
-              "Les photos ont fait echo jusqu’au milieu du sport, qui pourtant n’est pas des plus impliqués lorsqu’il s’agit du Festival de Cannes.  C’était le cas jusqu’à ce que Spike Lee débarque sur la Croisette. Généralement les personnalités du cinéma côtoient celles de la mode et de la musique, mais le football ne s’en mêle pas vraiment.C’est en tant que président de cette 74e édition du Festival de Cannes, que le réalisateur new-yorkais va passer les douze prochains jours à découvrir la sélection officielle du festival avec son jury. Il devra récompenser les meilleurs  œuvres présentées.  Cannes est lieu haut en couleur en mode, les robes les plus incroyables défilent sur les marches du Palais des festivals, Spike Lee a tenu à apporter sa touche fashion à la Croisette.",
-          content2 : "Spike Lee à débarqué lundi, à l’aéroport de Nice dans une tenue de voyage qui ne nous a pas laissé indifférents. Petit jogging issu de la collection PSG x Jordan. Un pantalon avec les bandes tricolores aux couleurs parisiennes, un gilet blanc et un tee-shirt aux couleurs du club parisien. La preuve de son amour pour le football.  Le président du jury du Festival de Cannes a fait fort devant l’œil des photographes pour la toute première montée des marches, ce mardi 6 juillet.\n" +
-              "\n" +
-              "Chemise blanche boutonnée jusqu’en haut, le cinéaste américain de 64 ans a, ici opté pour un smoking rose fuchsia. Sur ses yeux: une paire de lunettes de soleil teintées à la monture assortie.\n" +
-              "\n" +
-              "Contre toute attente, parmi les dizaines de stars qui ont monté les marches de la Croisette ce mardi, Spike Lee est devenu, en vingt-quatre heures, la plus grande sensation mode de ce 74e Festival de Cannes."
         },
         {
           title: 'Le streetwear futur héro de l\'environnement ?',
-          img: 'https://i.ibb.co/K6MfWTL/Rectangle-32.png',
+          img: 'https://i.ibb.co/V2cVy3g/Rectangle-32.png',
           Date: '5 Juillet 2021',
           Categorie: 'StreetWear'
         }, {
-          title: 'Le streetwear futur héro de l\'environnement ?',
-          img: '',
+          title: 'Kanye West au défilé haute-couture de Balenciaga ?',
+          img: 'https://i.ibb.co/zHFFxg0/Rectangle-32-1.png',
           Date: '7 Juillet 2021',
           Categorie: 'StreetWear'
 
         },
         {
           title: 'Bape déclare sa nouvelle collection sta summer 2021',
-          img: '',
+          img: 'https://i.ibb.co/RT39NsV/Rectangle-32-2.png',
           Date: '8 Juillet 2021',
           Categorie: 'Sneakers'
         }, {
           title: 'New Balance repense sa 2002R dans la protection pack',
-          img: '',
+          img: 'https://i.ibb.co/qLGNt8t/Rectangle-32-3.png',
           Date: '1 Juin 2021',
           Categorie: 'Sneakers'
 
         }, {
-          title: 'Ces air jordan 1sont entièrement made in France',
-          img: '',
+          title: 'Ces air jordan 1 sont entièrement made in France',
+          img: 'https://i.ibb.co/NrLJFp2/Rectangle-32-3.png',
           Date: '7 Juin 2021',
           Categorie: 'Sneakers'
 
         },
         {
           title: 'Nintendo présente sa nouvelle switch OLED',
-          img: '',
+          img: 'https://i.ibb.co/wLjJTkf/Rectangle-32-4.png',
           Date: '6 Juin 2021',
           Categorie: 'Lifestyle'
         }, {
           title: 'BMW présente son scooter électrique au design futuriste',
-          img: '',
+          img: 'https://i.ibb.co/HB1hBpn/Rectangle-32-5.png',
           Date: '8 Juin 2021',
           Categorie: 'Lifestyle'
         }, {
           title: 'Rawemotions sort 3 nouveaux lucky cat rug',
-          img: '',
+          img: 'https://i.ibb.co/sgN9Hct/Rectangle-32-6.png',
           Date: 'Il y a 1 semaine',
           Categorie: 'Lifestyle'
         }
@@ -165,7 +145,14 @@ export default {
 
 <style lang="scss">
 
+@media (max-width: 1399px) {
+  .vertical-line {
+    display: none !important;
+  }
+}
+
 .actus {
+
   .vertical-line {
     border-left: 6px solid #CC1237;
     display: inline-block;
@@ -173,7 +160,7 @@ export default {
     margin: 0 20px;
   }
 
-  padding-top: 8%;
+  padding-top: 15%;
   display: flex;
   justify-content: space-around;
 

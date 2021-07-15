@@ -62,6 +62,22 @@ export default {
 </script>
 
 <style lang="scss">
+
+@media (max-width: 1399px) {
+
+  .podcast {
+    padding-top: 15% !important;
+  }
+
+  .podcast-list {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .video {
+    margin-top: 10% !important;
+  }
+}
 .podcast {
   padding-top: 8%;
 

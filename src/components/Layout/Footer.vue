@@ -35,11 +35,14 @@
 
         <div class="column is-one-quarter contact" style="height: 1%">
           <strong style="color: #1D1D1D">QUI NOUS SOMMES</strong><br><br><br>
-          <p style="color: #1D1D1D">Personnal Shopper</p><br>
-          <p style="color: #1D1D1D">Actus</p><br>
-          <p style="color: #1D1D1D">Interview</p><br>
-          <p style="color: #1D1D1D">Podcast</p><br>
-          <p style="color: #1D1D1D">Contactez-nous</p><br>
+          <p class="route"><router-link style="color: rgb(29, 29, 29); font-size: 22px;"
+                                        to="/personnalshopper">Personnal
+            Shopper</router-link></p>
+          <p><router-link class="route" style="color: rgb(29, 29, 29); font-size: 22px;" to="/actus">Actus</router-link></p>
+          <p><router-link class="route" style="color: rgb(29, 29, 29); font-size: 22px;" to="/podcast">Podcast</router-link></p>
+          <p><router-link class="route" style="color: rgb(29, 29, 29); font-size: 22px;" to="/404">Interview</router-link></p>
+          <p ><router-link class="route" style="color: rgb(29, 29, 29); font-size: 22px;" to="/404">Contactez-nous</router-link></p>
+          <p>Nos partenaires <img src="" alt=""></p>
         </div>
         <div class="column is-one-quarter contact" style="margin-left: 0; height: 1%">
 <!--          <iframe width="600" height="600"-->
@@ -116,7 +119,7 @@
                       </div>
                     </div>
                   </div>
-                  <div style="position: relative; bottom: 16rem; left: 12rem;">
+                  <div style="position: relative;">
                     <div class="sib-form-block" style="text-align: center">
                       <button name="Submit-newsletter" class="" style="border: 0; text-align:center;background-color:
                       transparent;"
@@ -137,7 +140,7 @@
 
         </div>
       </div>
-      <h5>Copyright 2020 | All Rights Reserved | EPYH</h5>
+      <h5>Copyright 2021 | All Rights Reserved | EPYH</h5>
     </footer>
   </div>
 </template>
@@ -187,6 +190,10 @@ export default {
 .footer {
   border-radius: 25px 25px 0px 0px;
 
+  .route:hover {
+    color: #0088a9;
+  }
+
   .contact {
     font-family: Poppins;
     //font-weight: 600;
@@ -200,6 +207,8 @@ export default {
     .rs {
       padding-right: 20px;
     }
+
+
   }
 
 }

@@ -7,7 +7,7 @@
           <li><router-link to="/personnalShopper">Personnal Shopper</router-link></li>
           <li><router-link to="/actus">Actus</router-link></li>
           <li><router-link to="/podcast">Podcast</router-link></li>
-          <li><a href="#">Interview</a></li>
+          <li><router-link to="/404">Interview</router-link></li>
         </ul>
       </nav>
       <p class="menu cta">Menu</p>
@@ -15,10 +15,10 @@
     <div id="mobile__menu" class="overlay">
       <a class="close">&times;</a>
       <div class="overlay__content">
-        <li><a href="#">Personnal Shopper</a></li>
-        <li><a href="#">Actus</a></li>
-        <li><a href="#">Podcast</a></li>
-        <li><a href="#">Interview</a></li>
+        <li><router-link to="/personnalShopper">Personnal Shopper</router-link></li>
+        <li><router-link to="/actus">Actus</router-link></li>
+        <li><router-link to="/podcast">Podcast</router-link></li>
+        <li><router-link to="/404">Interview</router-link></li>
       </div>
     </div>
   </div>

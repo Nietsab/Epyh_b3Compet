@@ -28,14 +28,30 @@ export default {
 
 <style scoped lang="scss">
 
+@media (max-width: 1399px) {
+  .podcast {
+    justify-content: center !important;
+  }
+  .content {
+    width: 100% !important;
+  }
+
+  .video {
+    margin-right: 0 !important;
+  }
+}
+
 .podcast {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
 
   .content{
     margin-left: 7%;
     text-align: left;
     width: 35%;
+
+
 
     .title-podcast{
       font-family: Poppins;
@@ -92,7 +108,6 @@ export default {
   }
 
   .video {
-    width: 18%;
     margin-right: 15%;
   }
 }
